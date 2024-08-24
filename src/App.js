@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Buttom from '~/component/Buttom/index';
 
 function App() {
   return (
     <div className="App">
+      <Buttom/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -15,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          hello anh em
         </a>
       </header>
     </div>
