@@ -1,0 +1,6 @@
+// cấu hình prettier báo cho extension phải tuân theo cấu hình ở file prettier
+
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

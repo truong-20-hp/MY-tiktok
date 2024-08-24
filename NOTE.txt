@@ -1,3 +1,5 @@
 - cấu hình customize-cra : để ghi dè lại cấu hình của webpack mà không cần phải eject dự án.
 - cấu hình babel-plugin-module-resoler : để cấu hình src/ ==> ~/, đặt thư mục gốc là src là ~, đứng từ trong các cấp con chỉ cần gõ ~/ 
     không cần phải đi nhiều cấp ../../
+
+- cấu hình prettier : để giúp code đẹp hơn, ngay ngắn hơn, có thể gitignore để cho những người không thích thì không cần theo
