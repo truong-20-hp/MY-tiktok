@@ -5,3 +5,7 @@
 - cấu hình prettier : để giúp code đẹp hơn, ngay ngắn hơn, có thể gitignore để cho những người không thích thì không cần theo
 - cài scss, và reset css bằng thư viện normalize.css để đồng nhất các css mặc định trên các trình duyệt 
 - set font-family, font-size, light-height cho body
+
+- cấu hình npm i react-router-dom : để cài thư viện giúp điều hướng trang mà không cần tải lại toàn bộ trang
+
+- cấu hình cơ Router/ Layout cho dự án
