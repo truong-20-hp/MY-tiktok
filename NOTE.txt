@@ -10,6 +10,8 @@
 
 - cấu hình cơ Router/ Layout cho dự án
 
--khi clone dự án về máy khác cần npm install để kéo các thư viện đã cài ở máy cũ về máy mới
+-khi clone hoặc pull dự án về máy khác cần npm install để kéo các thư viện đã cài ở máy cũ về máy mới
 
 - npm i classnames : sử dụng thư viện classnames để đặt tên class theo kiểu có dấu gạch ngang ví dụ item-list
+
+- install fontAwesme  
