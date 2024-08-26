@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    margin: auto;
+    width: var(--default-layout-width);
+}
+
+.content {
+    flex: 1;
+}
