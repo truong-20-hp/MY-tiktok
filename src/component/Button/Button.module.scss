@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-width: 100px;
+    padding: 9px 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+}
+
+.rounded {
+    border-radius: 100px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    background: none rgb(255, 255, 255);
+    color: rgba(22, 24, 35, 0.75);
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: #fff;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+    }
+}
+
+.outline {
+    color: var(--primary-color);
+    border-color: currentColor;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.small {
+    color: var(--primary-color);
+    border-color: currentColor;
+    padding: 6px;
+    width: 60px;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.text {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.wrapper.disable {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.icon + .login,
+.login + .icon {
+    margin-left: 6px;
+}
