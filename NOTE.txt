@@ -15,3 +15,7 @@
 - npm i classnames : sử dụng thư viện classnames để đặt tên class theo kiểu có dấu gạch ngang ví dụ item-list
 
 - install fontAwesme  
+
+-npm i @tippyjs/react : thêm thư viện tippy để dùng tooltip và popper
+
+-Ai bị lỗi này ''Warning: FontAwesomeIcon: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.'' thì các bạn update Font awesome nhá. Executed : npm i @fortawesome/react-fontawesome@latest @fortawesome/fontawesome-svg-core@latest @fortawesome/free-regular-svg-icons@latest
