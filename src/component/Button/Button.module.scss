@@ -1,5 +1,5 @@
 .wrapper {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
@@ -67,4 +67,10 @@
 .icon + .login,
 .login + .icon {
     margin-left: 6px;
+}
+
+.icon {
+    display: block;
+    width: 24px;
+    text-align: center;
 }

@@ -16,6 +16,7 @@ function Button({
     rightIcon = false,
     leftIcon = false,
     children,
+    className,
     onClick,
     ...passprop
 }) {
@@ -51,6 +52,7 @@ function Button({
         rounded,
         rightIcon,
         leftIcon,
+        [className]: className,
     });
 
     return (

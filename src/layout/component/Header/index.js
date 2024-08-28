@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faMagnifyingGlass,
+    faEllipsisVertical,
+    faSpinner,
+    faEarthAsia,
+    faKeyboard,
+    faCircleQuestion,
+} from '@fortawesome/free-solid-svg-icons';
 import TippyHeadless from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
@@ -9,14 +17,31 @@ import { Wrapper as PopperWrapper } from '~/component/Popper';
 import styles from './Header.module.scss';
 import image from '~/asset/image';
 import Button from '~/component/Button';
+import Menu from '~/component/Popper/Menu';
+
+const MENU_ITEM = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'Language',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: 'feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shotcut',
+    },
+];
 
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 2000);
+            setSearchResult([]);
+        }, 0);
     }, []);
 
     return (
@@ -59,6 +84,11 @@ function Header() {
                 <div className={cx('active')}>
                     <Button text>Upload</Button>
                     <Button primary>Login</Button>
+                    <Menu items={MENU_ITEM}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

@@ -96,7 +96,16 @@
     }
 }
 
+// active:
 .active {
     display: flex;
     align-items: center;
+}
+
+.more-btn {
+    margin-left: 28px;
+    font-size: 2rem;
+    padding: 8px;
+    background-color: transparent;
+    cursor: pointer;
 }
