@@ -31,6 +31,8 @@ function Menu({ items = [], children }) {
     return (
         <div>
             <Tippy
+                visible
+                offset={[14, 10]}
                 interactive
                 delay={[0, 700]}
                 placement="bottom-end"
@@ -40,13 +42,18 @@ function Menu({ items = [], children }) {
                             {history.length > 1 && (
                                 <Header
                                     title="Language"
-                                    onBack={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
+                                    onBack={() =>
+                                        setHistory((prev) =>
+                                            prev.slice(0, prev.length - 1),
+                                        )
+                                    }
                                 />
                             )}
                             {renderItem()}
                         </PopperWrapper>
                     </div>
                 )}
+                onHide={() => setHistory((prev) => prev.slice(0, 1))}
             >
                 {children}
             </Tippy>

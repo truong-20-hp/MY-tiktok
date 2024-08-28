@@ -36,3 +36,22 @@ a {
     text-decoration: none;
     color: var(--text-color);
 }
+
+// custom Tippy :
+
+.tippy-box {
+    background-color: rgba(32, 32, 32, 0.7);
+}
+
+.tippy-arrow {
+    color: rgba(32, 32, 32, 0.7);
+}
+
+.tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+    top: -8px;
+}
+
+.tippy-content {
+    padding: 7px 9px;
+    font-size: 1.5rem;
+}

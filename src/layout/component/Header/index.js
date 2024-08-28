@@ -8,8 +8,16 @@ import {
     faEarthAsia,
     faKeyboard,
     faCircleQuestion,
+    faCloudArrowUp,
+    faCommentDots,
+    faUser,
+    faCoins,
+    faGear,
+    faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import TippyHeadless from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 
 import AccountsItem from '~/component/AccountsItem';
@@ -81,6 +89,33 @@ function Header() {
         }, 0);
     }, []);
 
+    const currentUser = true;
+
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faUser} />,
+            title: 'View Profile',
+            to: 'profile',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCoins} />,
+            title: 'Get Coin',
+            to: 'coin',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            title: 'Setting',
+            to: 'setting',
+        },
+        ...MENU_ITEM,
+        {
+            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+            title: 'Logout',
+            to: 'logout',
+            separate: true,
+        },
+    ];
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -92,9 +127,15 @@ function Header() {
                         interactive
                         visible={searchResult.length > 0}
                         render={(attrs) => (
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <div
+                                className={cx('search-result')}
+                                tabIndex="-1"
+                                {...attrs}
+                            >
                                 <PopperWrapper>
-                                    <h5 className={cx('search-title')}>Accounts</h5>
+                                    <h5 className={cx('search-title')}>
+                                        Accounts
+                                    </h5>
                                     <AccountsItem />
                                     <AccountsItem />
                                     <AccountsItem />
@@ -105,7 +146,10 @@ function Header() {
                         )}
                     >
                         <div className={cx('search')}>
-                            <input className={cx('input')} placeholder="Search" />
+                            <input
+                                className={cx('input')}
+                                placeholder="Search"
+                            />
                             <button className={cx('clear')}>
                                 <FontAwesomeIcon icon={faCircleXmark} />
                             </button>
@@ -119,12 +163,36 @@ function Header() {
                     </TippyHeadless>
                 </div>
                 <div className={cx('active')}>
-                    <Button text>Upload</Button>
-                    <Button primary>Login</Button>
-                    <Menu items={MENU_ITEM}>
-                        <button className={cx('more-btn')}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </button>
+                    {currentUser ? (
+                        <>
+                            <Tippy content="Upload video" placement="bottom">
+                                <button className={cx('icon-btn')}>
+                                    {<FontAwesomeIcon icon={faCloudArrowUp} />}
+                                </button>
+                            </Tippy>
+                            <Tippy content="Tin nhan" placement="bottom">
+                                <button className={cx('icon-btn')}>
+                                    {<FontAwesomeIcon icon={faCommentDots} />}
+                                </button>
+                            </Tippy>
+                        </>
+                    ) : (
+                        <>
+                            <Button text>Upload</Button>
+                            <Button primary>Login</Button>
+                        </>
+                    )}
+                    <Menu items={currentUser ? userMenu : MENU_ITEM}>
+                        {currentUser ? (
+                            <img
+                                className={cx('user-avatar')}
+                                src="https://cdn.24h.com.vn/upload/3-2023/images/2023-08-15/Ngam-than-hinh-phu-huynh-cua-gai-xinh-co-doi-tu-gay-tranh-cai-12-1692073627-320-width650height808.jpg"
+                            />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
             </div>
