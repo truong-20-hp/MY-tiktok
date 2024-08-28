@@ -22,7 +22,44 @@ import Menu from '~/component/Popper/Menu';
 const MENU_ITEM = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: 'Language',
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'fi',
+                    title: 'Suomi', // Finland
+                },
+                {
+                    code: 'no',
+                    title: 'Norsk', // Norway
+                },
+                {
+                    code: 'se',
+                    title: 'Svenska', // Sweden
+                },
+                {
+                    code: 'dk',
+                    title: 'Dansk', // Denmark
+                },
+                {
+                    code: 'ch',
+                    title: 'Schweizerdeutsch', // Switzerland (Swiss German)
+                },
+                {
+                    code: 'nl',
+                    title: 'Nederlands', // Netherlands
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,

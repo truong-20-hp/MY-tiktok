@@ -10,6 +10,7 @@
     padding-bottom: 8px;
 }
 
+// menu-item :
 .menu-item {
     width: 100%;
     line-height: 24px;
@@ -17,4 +18,30 @@
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
+}
+
+// header :
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    margin-top: -8px;
+}
+
+.iconBack {
+    width: 52px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: 700;
+    user-select: none;
 }
