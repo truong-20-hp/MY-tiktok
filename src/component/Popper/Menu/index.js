@@ -31,7 +31,6 @@ function Menu({ items = [], children }) {
     return (
         <div>
             <Tippy
-                visible
                 offset={[14, 10]}
                 interactive
                 delay={[0, 700]}

@@ -8,8 +8,6 @@ import {
     faEarthAsia,
     faKeyboard,
     faCircleQuestion,
-    faCloudArrowUp,
-    faCommentDots,
     faUser,
     faCoins,
     faGear,
@@ -26,6 +24,8 @@ import styles from './Header.module.scss';
 import image from '~/asset/image';
 import Button from '~/component/Button';
 import Menu from '~/component/Popper/Menu';
+import { MailboxIcon, MessageIcon } from '~/component/icons';
+import Image from '~/component/Image';
 
 const MENU_ITEM = [
     {
@@ -167,12 +167,12 @@ function Header() {
                         <>
                             <Tippy content="Upload video" placement="bottom">
                                 <button className={cx('icon-btn')}>
-                                    {<FontAwesomeIcon icon={faCloudArrowUp} />}
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Tin nhan" placement="bottom">
                                 <button className={cx('icon-btn')}>
-                                    {<FontAwesomeIcon icon={faCommentDots} />}
+                                    <MailboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -184,9 +184,10 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEM}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://cdn.24h.com.vn/upload/3-2023/images/2023-08-15/Ngam-than-hinh-phu-huynh-cua-gai-xinh-co-doi-tu-gay-tranh-cai-12-1692073627-320-width650height808.jpg"
+                                alt="user-avatar"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
